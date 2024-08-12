@@ -1,0 +1,128 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+ <div class="container-fluid">
+  <div class="row vh-100">
+    <div class="col-lg-6 d-flex align-items-center ps-5">
+      <div class="log-in-form">
+        <div class="logo mb-4">
+          <img src="../assets/images/ntspl_logo.png" alt="Logo">
+        </div>
+        <h3>Welcome to Meeting Plus</h3>
+        <p>Enter your email id to log in to your account</p>
+        <div class="step-bar">
+          <ul>
+            <li class="step" [class.active]="currentStep >= 1">
+              <div class="num">1</div>
+              <div class="line"></div>
+            </li>
+            <li class="step" [class.active]="currentStep >= 2">
+              <div class="num">2</div>
+              <div class="line"></div>
+            </li>
+            <li class="step" [class.active]="currentStep >= 3">
+              <div class="num">3</div>
+              <div class="line"></div>
+            </li>
+            <li class="step" [class.active]="currentStep >= 4">
+              <div class="num">4</div>
+            </li>
+          </ul>
+        </div>
+
+        <form [formGroup]="signUpForm">
+          <div *ngIf="currentStep === 1" class="sign-up my-4">
+            <div class="email-group my-3">
+              <label for="email" class="email">Email<span>*</span></label>
+              <br>
+              <div class="inner-group">
+                <input type="text" class="email-box" formControlName="email" placeholder="Type Your Email">
+                <div *ngIf="signUpForm.get('email')!.invalid && signUpForm.get('email')!.touched" class="error">
+                  Invalid email format.
+                </div>
+              </div>
+            </div>
+            <div class="psw-group">
+              <label for="phone" class="psw">Phone number<span>*</span></label>
+              <br>
+              <div class="inner-group">
+                <input type="text" class="phone-box" formControlName="phone" placeholder="Enter Phone Number">
+                <div *ngIf="signUpForm.get('phone')!.invalid && signUpForm.get('phone')!.touched" class="error">
+                  Phone number must be 10 digits.
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div *ngIf="currentStep === 2" class="sign-up my-4">
+            <div class="email-group my-3">
+              <label for="fullName" class="email">Full Name<span>*</span></label>
+              <br>
+              <div class="inner-group">
+                <input type="text" class="email-box" formControlName="name" placeholder="Type Your Name">
+                <div *ngIf="signUpForm.get('name')!.invalid && signUpForm.get('name')!.touched" class="error">
+                  Full Name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="email-group my-3">
+              <label for="fullName" class="email">Organization<span>*</span></label>
+              <br>
+              <div class="inner-group">
+                <input type="text" class="email-box" formControlName="organisation" placeholder="Type Organisation">
+                <div *ngIf="signUpForm.get('organisation')!.invalid && signUpForm.get('organisation')!.touched" class="error">
+                  Organization is required.
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div *ngIf="currentStep === 3" class="sign-up my-4">
+            <div class="email-group my-3">
+              <label for="password" class="email">Password<span>*</span></label>
+              <br>
+              <div class="inner-group">
+                <input type="password" class="email-box" formControlName="password" placeholder="Type Your Password">
+                <div *ngIf="signUpForm.get('password')!.invalid && signUpForm.get('password')!.touched" class="error">
+                  Password is required and must be at least 6 characters.
+                </div>
+              </div>
+            </div>
+            <div class="psw-group">
+              <label for="confirmPassword" class="psw">Retype Password<span>*</span></label>
+              <br>
+              <div class="inner-group">
+                <input type="password" class="phone-box" formControlName="confirmPassword" placeholder="Retype Your Password">
+                <div *ngIf="signUpForm.get('confirmPassword')!.invalid && signUpForm.get('confirmPassword')!.touched" class="error">
+                  Passwords must match.
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <button class="continue" type="button" (click)="continue()">Continue</button>
+          <button class="signup-btn mt-3" type="button" (click)="register()" [disabled]="currentStep !== 3 || !signUpForm.valid">Register</button>
+          <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        </form>
+
+        <div class="exist-account mt-3 d-flex align-items-center justify-content-center">
+            <div class="have-account or">Already have an account? <a href="#">Sign in</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center text-white text-center">
+      <div class="right-section">
+        <div class="slider-section">
+          <h2>Meeting Plus</h2>
+          <h3>Where Meetings Become Meaningful</h3>
+          <div class="meet-img mt-3">
+            <img src="../assets/images/meeting.png" class="img-fluid" alt="Meeting Image">
+          </div>
+        </div>
+        <p class="copyright">© 2024 NTSPL All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
+

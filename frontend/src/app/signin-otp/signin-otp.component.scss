@@ -1,0 +1,130 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container-fluid {
+    background-color: aliceblue;
+  }
+  
+  .log-in-form {
+    padding: 20px;
+  }
+  .email{
+    font-weight: 500;
+  }
+  .email span{
+    color: rgb(255, 39, 39);
+  }
+  .inner-group input{
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #352396;
+    padding-left: 40px;
+    background-image: url(../../assets/images/email.png);
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 25px;
+  }
+  .inner-group input:focus{
+  outline: none;
+  }
+  .otp-btn, .sign-in-psw {
+    width: 100%;
+    max-width: 350px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  
+  .otp-btn {
+    color: white;
+    background-color: #352396;
+    border: 1px solid #352396;
+  }
+  
+  .sign-in-psw {
+    color: #352396;
+    border: 1px solid #352396;
+  }
+  
+  .set-psw a {
+    color: grey;
+    text-decoration: none;
+  }
+  
+  .or {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .or::before, .or::after {
+    content: '';
+    height: 1px;
+    width: 40%;
+    background-color: #352396;
+  }
+  
+  .or::before {
+    margin-right: 10px;
+  }
+  
+  .or::after {
+    margin-left: 10px;
+  }
+  
+  .right-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #352396;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+  }
+  .right-section::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    background-image: url(../../assets/images/background.svg);
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    background-size: cover
+  }
+  .right-section .slider-section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .right-section h2 {
+    margin-bottom: 15px;
+  }
+  .meet-img{
+    height: 400px;
+    width: 425px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  .meet-img img {
+    max-width: 100%;
+    height: auto;
+  }
+  .copyright{
+    position: relative;
+      text-align: center;
+      top: 25px;
+      left: auto;
+      transform: none;
+      color: #fff;
+      font-size: 13px;
+      cursor: pointer;
+  }
+  
